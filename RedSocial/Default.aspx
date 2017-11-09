@@ -9,7 +9,7 @@
     <style type="text/css">
         #form1 {
             width: 1233px;
-            height: 624px;
+            height: 810px;
         }
     </style>
 </head>
@@ -59,6 +59,7 @@
         </asp:GridView>
         
         <asp:ImageButton ID="ibAgregarTarea" runat="server" ClientIDMode="AutoID" ImageUrl="~/Imagenes/AddTareaImg.png" OnClick="ibAgregarTarea_Click" Width="31px" />
+        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
         
     </form>
 </body>
