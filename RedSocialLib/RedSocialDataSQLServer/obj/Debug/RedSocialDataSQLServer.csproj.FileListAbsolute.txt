@@ -1,0 +1,49 @@
+D:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social 2013 VS2008\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.dll
+D:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social 2013 VS2008\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.pdb
+D:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social 2013 VS2008\RedSocialLib\RedSocialDataSQLServer\obj\Debug\ResolveAssemblyReference.cache
+D:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social 2013 VS2008\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.dll
+D:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social 2013 VS2008\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\ResolveAssemblyReference.cache
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.csprojResolveAssemblyReference.cache
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.pdb
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.dll
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.pdb
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.dll
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.dll
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.dll
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.pdb
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.pdb
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.pdb
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.csprojResolveAssemblyReference.cache
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.dll
+D:\Alejandro\Red Social ORT\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialDataSQLServer.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialData.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialEntity.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\bin\Debug\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.csprojResolveAssemblyReference.cache
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialDataSQLServer\obj\Debug\RedSocialDataSQLServer.pdb

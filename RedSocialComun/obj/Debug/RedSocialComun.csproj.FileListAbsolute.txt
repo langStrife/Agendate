@@ -1,0 +1,18 @@
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.pdb
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialComun\obj\Debug\ResolveAssemblyReference.cache
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.dll
+C:\Alejandro\ORT\Desarrollos\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.pdb
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.dll
+F:\Documentos\Alejandro\Desarrollo\wwwroot\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.pdb
+D:\Alejandro\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.dll
+D:\Alejandro\Red Social ORT\RedSocialComun\bin\Debug\RedSocialComun.pdb
+D:\Alejandro\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.dll
+D:\Alejandro\Red Social ORT\RedSocialComun\obj\Debug\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\bin\Debug\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\bin\Debug\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\obj\Debug\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\obj\Debug\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\obj\Debug\RedSocialComun.csprojResolveAssemblyReference.cache
