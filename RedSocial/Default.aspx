@@ -9,7 +9,7 @@
     <style type="text/css">
         #form1 {
             width: 1233px;
-            height: 810px;
+            height: 821px;
         }
     </style>
 </head>
@@ -58,7 +58,30 @@
             <SortedDescendingHeaderStyle BackColor="#820000" />
         </asp:GridView>
         
-        <asp:ImageButton ID="ibAgregarTarea" runat="server" ClientIDMode="AutoID" ImageUrl="~/Imagenes/AddTareaImg.png" OnClick="ibAgregarTarea_Click" Width="31px" />
+        <br />
+        <asp:Label ID="Label1" runat="server" Text="Tarea"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label2" runat="server" Text="Descripcion"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        
+        <br />
+        <asp:Label ID="Label5" runat="server" Text="Hora de Comienzo"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Hora de Fin"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox4_TextChanged"></asp:TextBox>
+        <br />
+        <asp:Label ID="Label4" runat="server" Text="Lugar"></asp:Label>
+        <br />
+        <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
+        <br />
+        <br />
+        <asp:ImageButton ID="ImageButton1" runat="server" Height="53px" ImageUrl="~/Imagenes/AddTareaImg.png" Width="53px" />
         <br />
         
     </form>

@@ -48,4 +48,29 @@ public partial class _Default : System.Web.UI.Page
     {
 
     }
+
+    protected void TextBox3_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void TextBox5_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void TextBox4_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void TextBox6_TextChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void gvTareasPorDia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 }
