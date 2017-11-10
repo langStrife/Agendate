@@ -59,7 +59,7 @@
         </asp:GridView>
         
         <asp:ImageButton ID="ibAgregarTarea" runat="server" ClientIDMode="AutoID" ImageUrl="~/Imagenes/AddTareaImg.png" OnClick="ibAgregarTarea_Click" Width="31px" />
-        <asp:TextBox ID="TextBox1" runat="server" OnTextChanged="TextBox1_TextChanged"></asp:TextBox>
+        <br />
         
     </form>
 </body>
