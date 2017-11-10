@@ -9,7 +9,7 @@
     <style type="text/css">
         #form1 {
             width: 1233px;
-            height: 821px;
+            height: 847px;
         }
     </style>
 </head>
@@ -59,29 +59,31 @@
         </asp:GridView>
         
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Tarea"></asp:Label>
+        <asp:Label ID="lTarea" runat="server" Text="Tarea"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbTarea" runat="server" OnTextChanged="tbTarea_TextChanged"></asp:TextBox>
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Descripcion"></asp:Label>
+        <asp:Label ID="lDesc" runat="server" Text="Descripcion"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="tbDesc" runat="server" OnTextChanged="tbDesc_TextChanged"></asp:TextBox>
         
         <br />
-        <asp:Label ID="Label5" runat="server" Text="Hora de Comienzo"></asp:Label>
+        <asp:Label ID="lHoraCom" runat="server" Text="Hora de Comienzo"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox3" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="tbHoraCom" runat="server" OnTextChanged="TextBox3_TextChanged"></asp:TextBox>
         <br />
-        <asp:Label ID="Label3" runat="server" Text="Hora de Fin"></asp:Label>
+        <asp:Label ID="lHoraFin" runat="server" Text="Hora de Fin"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBox4_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="tbHoraFin" runat="server" OnTextChanged="TextBox4_TextChanged"></asp:TextBox>
         <br />
-        <asp:Label ID="Label4" runat="server" Text="Lugar"></asp:Label>
+        <asp:Label ID="lLugar" runat="server" Text="Lugar"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
+        <asp:TextBox ID="tbLugar" runat="server" OnTextChanged="TextBox5_TextChanged"></asp:TextBox>
         <br />
         <br />
-        <asp:ImageButton ID="ImageButton1" runat="server" Height="53px" ImageUrl="~/Imagenes/AddTareaImg.png" Width="53px" />
+        <asp:Label ID="lGuardar" runat="server" Text="Guardar"></asp:Label>
+        <br />
+        <asp:ImageButton ID="ibAgregarTarea" runat="server" Height="61px" ImageUrl="~/Imagenes/AddTareaImg.png" OnClick="ibAgregarTarea_Click1" Width="59px" />
         <br />
         
     </form>
