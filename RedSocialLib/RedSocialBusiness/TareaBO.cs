@@ -21,18 +21,17 @@ namespace RedSocialBusiness
         {
             try
             {
-                tarea.ValidarDatos();
 
-                if (daTarea.HayDisponibilidad(tarea.HoraComienzo, tarea.HoraFin))
-                    throw new FechaOcupadaExcepcionBO();
-
-                daTarea.Insertar(tarea);
+                if (daTarea.HayDisponibilidad(tarea))
+                {
+                    daTarea.Insertar(tarea);
+                }
             }
             catch (ExcepcionDA ex)
             {
                 throw new ExcepcionBO("No se pudo realizar la registración de la tarea.", ex);
             }
-        }
+         }
 
         public void ActualizarTarea(TareaEntity tarea)
         {
@@ -61,14 +60,14 @@ namespace RedSocialBusiness
             , int? Id = null
             , String nombre = null
             , String descripcion = null
-            , DateTime? horaComienzo = null
-            , DateTime? horaFin = null
+            , DateTime? fechaHoraComienzo = null
+            , DateTime? fechaHoraFin = null
             , String lugar = null)
         {
             try
             {
                 //return daTarea.ListarTareas(dia, usuarioId);
-                return daTarea.ListarTareas(UsuarioId: UsuarioId, horaComienzo: horaComienzo);
+                return daTarea.ListarTareas(UsuarioId: UsuarioId, fechaHoraComienzo: fechaHoraComienzo);
                 //daTarea.ListarTareas(usuarioId, fechaDesde: DateTime.Now.AddDays(-30));
             }
             catch (ExcepcionBO ex)

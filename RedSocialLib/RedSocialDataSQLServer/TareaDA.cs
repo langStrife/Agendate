@@ -32,7 +32,7 @@ namespace RedSocialDataSQLServer
             return tarea;
         }
         #endregion Métodos Privados
-        
+
         #region Métodos Públicos
         public void Insertar(TareaEntity tarea)
         {
@@ -53,6 +53,45 @@ namespace RedSocialDataSQLServer
                         comando.Parameters["@Lugar"].Value = tarea.Lugar;
                         comando.ExecuteNonQuery();
                         tarea.Id = Convert.ToInt32(comando.Parameters["@RETURN_VALUE"].Value);
+
+                        //var parametroUsuarioId = new SqlParameter("@UsuarioId", SqlDbType.Int);
+                        //parametroUsuarioId.Value = tarea.UsuarioId;
+                        //comando.Parameters.Add(parametroUsuarioId);
+
+                        //var parametroNombre = new SqlParameter("@Nombre", SqlDbType.NVarChar);
+                        //parametroNombre.Value = tarea.Nombre;
+                        //comando.Parameters.Add(parametroNombre);
+
+                        //if (tarea.Descripcion == null)
+                        //    comando.Parameters["@Descripcion"].Value = DBNull.Value;
+                        //else
+                        //{
+                        //    var parametroDescripcion = new SqlParameter("@Descripcion", SqlDbType.NVarChar);
+                        //    parametroDescripcion.Value = tarea.Descripcion;
+                        //    comando.Parameters.Add(parametroDescripcion);
+                        //}
+
+                        //if (tarea.HoraComienzo == null)
+                        //    comando.Parameters["@HoraComienzo"].Value = DBNull.Value;
+                        //else
+                        //{
+                        //    var parametroHoraComienzo = new SqlParameter("@HoraComienzo", SqlDbType.DateTime);
+                        //    parametroHoraComienzo.Value = tarea.HoraComienzo;
+                        //    comando.Parameters.Add(parametroHoraComienzo);
+                        //}
+
+                        //if (tarea.HoraFin == null)
+                        //    comando.Parameters["@HoraFin"].Value = DBNull.Value;
+                        //else
+                        //{
+                        //    var parametroHoraFin = new SqlParameter("@HoraFin", SqlDbType.DateTime);
+                        //    parametroHoraFin.Value = tarea.HoraFin;
+                        //    comando.Parameters.Add(parametroHoraFin);
+                        //}
+
+                        //var parametroLugar = new SqlParameter("@Lugar", SqlDbType.NVarChar);
+                        //parametroLugar.Value = tarea.Lugar;
+                        //comando.Parameters.Add(parametroLugar);
                     }
 
                     conexion.Close();
@@ -115,23 +154,56 @@ namespace RedSocialDataSQLServer
             }
         }
 
-        public bool HayDisponibilidad(DateTime HoraComienzo, DateTime HoraFin)
+        public bool HayDisponibilidad(TareaEntity tarea)
         {
             try
             {
-                bool hayDisponibilidad;
+                bool hayDisponibilidad = false;
 
                 using (SqlConnection conexion = ConexionDA.ObtenerConexion())
                 {
                     using (SqlCommand comando = new SqlCommand("HayDisponibilidad", conexion))
                     {
                         comando.CommandType = CommandType.StoredProcedure;
-                        SqlCommandBuilder.DeriveParameters(comando);
+                        //SqlCommandBuilder.DeriveParameters(comando);
 
-                        comando.Parameters["@HoraComienzo"].Value = HoraComienzo;
-                        comando.Parameters["@HoraFin"].Value = HoraFin;
-                        hayDisponibilidad = Convert.ToBoolean(comando.ExecuteScalar());
-                    }
+                        //comando.Parameters["@UsuarioID"].Value = tarea.UsuarioId;
+                        //comando.Parameters["@HoraComienzo"].Value = HoraComienzo;
+                        //comando.Parameters["@HoraFin"].Value = HoraFin;
+
+                        var parametroUsuarioId = new SqlParameter("@UsuarioId", SqlDbType.Int);
+                        parametroUsuarioId.Value = tarea.UsuarioId;
+                        comando.Parameters.Add(parametroUsuarioId);
+
+                        if (tarea.HoraComienzo == null)
+                            comando.Parameters["@HoraComienzo"].Value = DBNull.Value;
+                        else
+                        {
+                            var parametroHoraComienzo = new SqlParameter("@HoraComienzo", SqlDbType.DateTime);
+                            parametroHoraComienzo.Value = tarea.HoraComienzo;
+                            comando.Parameters.Add(parametroHoraComienzo);
+                        }                        
+
+                        if (tarea.HoraFin == null)
+                            comando.Parameters["@HoraFin"].Value = DBNull.Value;
+                        else
+                        {
+                            var parametroHoraFin = new SqlParameter("@HoraFin", SqlDbType.DateTime);
+                            parametroHoraFin.Value = tarea.HoraFin;
+                            comando.Parameters.Add(parametroHoraFin);
+                        }
+
+                        var cursor = comando.ExecuteReader();
+                        if (cursor.HasRows)
+                        {
+                            Console.WriteLine("No se puede ingresar la tarea, esta ocupado el horario.");
+                        }
+                        else
+                        {
+                            hayDisponibilidad = true;
+                            Console.WriteLine("Se puede ingresar la tarea");
+                        }
+                }
 
                     conexion.Close();
                 }
@@ -148,7 +220,7 @@ namespace RedSocialDataSQLServer
             , int? Id = null
             , String nombre = null
             , String descripcion = null
-            , DateTime? horaComienzo = null
+            , DateTime? fechaHoraComienzo = null
             , DateTime? horaFin = null
             , String lugar = null)
         {
@@ -168,6 +240,10 @@ namespace RedSocialDataSQLServer
 
                         //comando.Parameters["@UsuarioId"].Value = UsuarioId;
 
+                        var parametroUsuarioId = new SqlParameter("@UsuarioId", SqlDbType.Int);
+                        parametroUsuarioId.Value = UsuarioId;
+                        comando.Parameters.Add(parametroUsuarioId);
+
                         //if (nombre == null)
                         //    comando.Parameters["@Nombre"].Value = DBNull.Value;
                         //else
@@ -178,14 +254,12 @@ namespace RedSocialDataSQLServer
                         //else
                         //    comando.Parameters["@Descripcion"].Value = descripcion;
 
-
-
-                        if (horaComienzo == null)
+                        if (fechaHoraComienzo == null)
                             comando.Parameters["@HoraComienzo"].Value = DBNull.Value;
                         else
                         {
                             var parametroHoraComienzo = new SqlParameter("@HoraComienzo", SqlDbType.DateTime);
-                            parametroHoraComienzo.Value = horaComienzo;
+                            parametroHoraComienzo.Value = fechaHoraComienzo;
                             comando.Parameters.Add(parametroHoraComienzo);
                         }
 
@@ -198,8 +272,6 @@ namespace RedSocialDataSQLServer
                         //    comando.Parameters["@Lugar"].Value = DBNull.Value;
                         //else
                         //    comando.Parameters["@Lugar"].Value = lugar;
-
-                        
 
                         var cursor = comando.ExecuteReader();
                         if (cursor.HasRows)
