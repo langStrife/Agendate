@@ -15,7 +15,11 @@
 				<div class="row">
 					<div class="col col-lg-9">
 						<div class="row">
-							<asp:Calendar class="calendar" ID="Calendar1" runat="server" OnSelectionChanged="Calendar1_SelectionChanged" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" DayNameFormat="Shortest" ShowGridLines="True">
+							<asp:Calendar class="calendar" ID="Calendar1" runat="server" 
+                                OnSelectionChanged="Calendar1_SelectionChanged" BackColor="#FFFFCC" BorderColor="#FFCC66" 
+                                BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" 
+                                DayNameFormat="Shortest" ShowGridLines="True">
+
 								<DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
 								<NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
 								<OtherMonthDayStyle ForeColor="#CC9966" />
@@ -26,9 +30,38 @@
 							</asp:Calendar>
 						</div>
 						<div class="row">
-							<asp:GridView class="tasks" ID="gvTareasPorDia" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="200px" Width="100%" AutoGenerateColumns="False" OnSelectedIndexChanged="gvTareasPorDia_SelectedIndexChanged" Style="margin-top: 2px;">
+							<asp:GridView 
+								class="tasks" ID="gvTareasPorDia" runat="server" 
+								CellPadding="4" ForeColor="#333333" GridLines="None"
+								Height="200px" Width="100%" AutoGenerateColumns="False" 
+								OnSelectedIndexChanged="gvTareasPorDia_SelectedIndexChanged" 
+								Style="margin-top: 2px;" 
+								CssClass="table table-bordered bs-table" 
+								OnRowEditing="gvTareasPorDia_RowEditing" 
+								OnDataBound="gvTareasPorDia_DataBound" 
+								OnRowDeleted="gvTareasPorDia_RowDeleted" 
+								OnRowUpdated="gvTareasPorDia_RowUpdated"
+								allowpaging="true" OnRowUpdating="gvTareasPorDia_RowUpdating">
 								<AlternatingRowStyle BackColor="White" />
 								<Columns>
+									<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="70px">
+										<ItemTemplate>
+											<asp:CheckBox ID="chkEliminar" runat="server" AutoPostBack="true" OnCheckedChanged="chk_OnCheckedChanged" />
+										</ItemTemplate>
+									</asp:TemplateField>
+									<%--botones de acción sobre los registros...--%>
+									<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
+										<ItemTemplate>
+											<%--Botones de eliminar y editar cliente...--%>
+											<asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar cliente?');" />
+											<asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Edit" />
+										</ItemTemplate>
+										<edititemtemplate>
+											<%--Botones de grabar y cancelar la edición de registro...--%>
+											<asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos del cliente?');" />
+											<asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default" CommandName="Cancel" />
+										</edititemtemplate>
+									</asp:TemplateField>
 									<asp:BoundField DataField="Nombre" HeaderText="Tarea">
 										<ItemStyle HorizontalAlign="Center" />
 									</asp:BoundField>
@@ -45,6 +78,7 @@
 										<ItemStyle HorizontalAlign="Center" />
 									</asp:BoundField>
 								</Columns>
+
 								<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
 								<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
 								<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />

@@ -66,9 +66,7 @@ namespace RedSocialBusiness
         {
             try
             {
-                //return daTarea.ListarTareas(dia, usuarioId);
                 return daTarea.ListarTareas(UsuarioId: UsuarioId, fechaHoraComienzo: fechaHoraComienzo);
-                //daTarea.ListarTareas(usuarioId, fechaDesde: DateTime.Now.AddDays(-30));
             }
             catch (ExcepcionBO ex)
             {

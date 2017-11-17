@@ -55,11 +55,10 @@ public partial class _Default : System.Web.UI.Page
             fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
             fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
             tarea.HoraFin = fechaHoraFin;
-            /*usuario.FechaNacimiento = Util.ObtenerFecha(
-                int.Parse(ddlAnio.SelectedValue),
-                int.Parse(ddlMes.SelectedValue),
-                int.Parse(ddlDia.SelectedValue));
-            usuario.Sexo = (ControlsHelper.RadioSeleccionado("Debe seleccionar el sexo.", radMujer, radHombre) == radMujer ? 'F' : 'M');*/
+            //usuario.FechaNacimiento = Util.ObtenerFecha(
+            //    int.Parse(ddlAnio.SelectedValue),
+            //    int.Parse(ddlMes.SelectedValue),
+            //    int.Parse(ddlDia.SelectedValue));
             boTarea.AgendarTarea(tarea);
             //SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
             //System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
@@ -68,6 +67,21 @@ public partial class _Default : System.Web.UI.Page
         {
             WebHelper.MostrarMensaje(Page, ex.Message);
         }
+
+    }
+
+    protected void gvTareasPorDia_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        gvTareasPorDia.EditIndex = e.NewEditIndex;
+    }
+
+    protected void gvTareasPorDia_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        
+    }
+
+    protected void gvTareasPorDia_RowDeleted(object sender, GridViewDeletedEventArgs e)
+    {
 
     }
 
@@ -96,7 +110,6 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-
     protected void ddlDesplegableHoraCom_SelectedIndexChanged(object sender, EventArgs e)
     {
 
@@ -118,6 +131,26 @@ public partial class _Default : System.Web.UI.Page
     }
 
     protected void gvTareasPorDia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void gvTareasPorDia_RowUpdated(object sender, GridViewUpdatedEventArgs e)
+    {
+
+    }
+
+    protected void gvTareasPorDia_DataBound(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void gvTareasPorDia_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        gvTareasPorDia.EditIndex = -1;
+    }
+
+    protected void gvTareasPorDia_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
 
     }

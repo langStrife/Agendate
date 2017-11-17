@@ -55,14 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalendarioEntity.cs" />
-    <Compile Include="DiaEntity.cs" />
     <Compile Include="EmailExcepcion.cs" />
     <Compile Include="FechaNacimientoExcepcion.cs" />
     <Compile Include="DatosObligatoriosExcepcion.cs" />
     <Compile Include="GrupoEntity.cs" />
-    <Compile Include="HoraEntity.cs" />
-    <Compile Include="MesEntity.cs" />
-    <Compile Include="MomentoDiaEnumEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TareaDinamicaEntity.cs" />
     <Compile Include="TareaEntity.cs" />
