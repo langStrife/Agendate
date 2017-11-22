@@ -55,3 +55,16 @@ Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocia
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.csprojResolveAssemblyReference.cache
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.dll
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialBusiness.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialBusiness.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialComun.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialData.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialDataSQLServer.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialEntity.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialComun.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialDataSQLServer.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialData.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\bin\Debug\RedSocialEntity.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.csprojResolveAssemblyReference.cache
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialBusiness\obj\Debug\RedSocialBusiness.pdb

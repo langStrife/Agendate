@@ -8,90 +8,101 @@
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-	</head>
+    </head>
 	<body>
 		<form id="form1" runat="server">
 			<div class="container">
 				<div class="row">
-					<div class="col col-lg-9">
-						<div class="row">
-							<asp:Calendar class="calendar" ID="Calendar1" runat="server" 
-                                OnSelectionChanged="Calendar1_SelectionChanged" BackColor="#FFFFCC" BorderColor="#FFCC66" 
-                                BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" 
-                                DayNameFormat="Shortest" ShowGridLines="True">
+					<div class="col-md-8">
+						<asp:Calendar class="calendar" ID="Calendar1" runat="server" 
+							OnSelectionChanged="Calendar1_SelectionChanged" BackColor="#FFFFCC" BorderColor="#FFCC66" 
+							BorderWidth="1px" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" 
+							DayNameFormat="Shortest" ShowGridLines="True" Height="300px" Width="100%">
+							<DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
+							<NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+							<OtherMonthDayStyle ForeColor="#CC9966" />
+							<SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+							<SelectorStyle BackColor="#FFCC66" />
+							<TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+							<TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+						</asp:Calendar>
 
-								<DayHeaderStyle Font-Bold="True" BackColor="#FFCC66" Height="1px" />
-								<NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
-								<OtherMonthDayStyle ForeColor="#CC9966" />
-								<SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
-								<SelectorStyle BackColor="#FFCC66" />
-								<TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
-								<TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
-							</asp:Calendar>
-						</div>
-						<div class="row">
-							<asp:GridView 
-								class="tasks" ID="gvTareasPorDia" runat="server" 
-								CellPadding="4" ForeColor="#333333" GridLines="None"
-								Height="200px" Width="100%" AutoGenerateColumns="False" 
-								OnSelectedIndexChanged="gvTareasPorDia_SelectedIndexChanged" 
-								Style="margin-top: 2px;" 
-								CssClass="table table-bordered bs-table" 
-								OnRowEditing="gvTareasPorDia_RowEditing" 
-								OnDataBound="gvTareasPorDia_DataBound" 
-								OnRowDeleted="gvTareasPorDia_RowDeleted" 
-								OnRowUpdated="gvTareasPorDia_RowUpdated"
-								allowpaging="true" OnRowUpdating="gvTareasPorDia_RowUpdating">
-								<AlternatingRowStyle BackColor="White" />
-								<Columns>
-									<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="70px">
-										<ItemTemplate>
-											<asp:CheckBox ID="chkEliminar" runat="server" AutoPostBack="true" OnCheckedChanged="chk_OnCheckedChanged" />
-										</ItemTemplate>
-									</asp:TemplateField>
-									<%--botones de acción sobre los registros...--%>
-									<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="200px">
-										<ItemTemplate>
-											<%--Botones de eliminar y editar cliente...--%>
-											<asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar cliente?');" />
-											<asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Edit" />
-										</ItemTemplate>
-										<edititemtemplate>
-											<%--Botones de grabar y cancelar la edición de registro...--%>
-											<asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos del cliente?');" />
-											<asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default" CommandName="Cancel" />
-										</edititemtemplate>
-									</asp:TemplateField>
-									<asp:BoundField DataField="Nombre" HeaderText="Tarea">
-										<ItemStyle HorizontalAlign="Center" />
-									</asp:BoundField>
-									<asp:BoundField DataField="Descripcion" HeaderText="Descripcion">
-										<ItemStyle HorizontalAlign="Center" />
-									</asp:BoundField>
-									<asp:BoundField DataField="HoraComienzo" HeaderText="Hora de Comienzo">
-										<ItemStyle HorizontalAlign="Center" />
-									</asp:BoundField>
-									<asp:BoundField DataField="HoraFin" HeaderText="Hora de Fin">
-										<ItemStyle HorizontalAlign="Center" />
-									</asp:BoundField>
-									<asp:BoundField DataField="Lugar" HeaderText="Lugar">
-										<ItemStyle HorizontalAlign="Center" />
-									</asp:BoundField>
-								</Columns>
+    <asp:GridView ID="gvTareasPorDia" runat="server"
+        AutoGenerateColumns="False" 
+        CssClass="table table-bordered bs-table" 
+        OnRowDeleted="gvTareasPorDia_RowDeleted" 
+        OnRowUpdated="gvTareasPorDia_RowUpdated" 
+        OnRowEditing="gvTareasPorDia_RowEditing" 
+        OnDataBound="gvTareasPorDia_DataBound" 
+        allowpaging="True" OnRowCancelingEdit="gvTareasPorDia_RowCancelingEdit" OnRowDeleting="gvTareasPorDia_RowDeleting" OnRowUpdating="gvTareasPorDia_RowUpdating" >
 
-								<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-								<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-								<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-								<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
-								<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-								<SortedAscendingCellStyle BackColor="#FDF5AC" />
-								<SortedAscendingHeaderStyle BackColor="#4D0000" />
-								<SortedDescendingCellStyle BackColor="#FCF6C0" />
-								<SortedDescendingHeaderStyle BackColor="#820000" />
-							</asp:GridView>
-						</div>
+        <HeaderStyle BackColor="#337ab7" Font-Bold="True" ForeColor="White" />
+        <EditRowStyle BackColor="#ffffcc" />
+        <EmptyDataRowStyle forecolor="Red" CssClass="table table-bordered" />
+        <emptydatatemplate>
+            ¡No hay clientes con los parámetros seleccionados!  
+        </emptydatatemplate>           
+            
+
+        <Columns>
+            <asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100%">
+                <ItemTemplate>
+                    <%--Botones de eliminar y editar cliente...--%>
+                    <asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar cliente?');" />
+                    <asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Edit" />
+                </ItemTemplate>
+                <edititemtemplate>
+                    <%--Botones de grabar y cancelar la edición de registro...--%>
+                    <asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos del cliente?');" />
+                    <asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default" CommandName="Cancel" />
+                </edititemtemplate>
+
+                <HeaderStyle Width="15%" />
+
+<ItemStyle HorizontalAlign="Center"></ItemStyle>
+            </asp:TemplateField>
+
+            <asp:BoundField DataField="Nombre" HeaderText="Tarea" />
+
+            <asp:BoundField DataField="Descripcion" HeaderText="Descripcion" InsertVisible="False" SortExpression="CustomerID" ControlStyle-Width="100%" >
+            <ControlStyle Width="100%" />
+            </asp:BoundField>
+            <asp:BoundField DataField="HoraComienzo" HeaderText="Hora De Comienzo" InsertVisible="False" SortExpression="CustomerID" ControlStyle-Width="100%" >
+            <ControlStyle Width="100%" />
+            </asp:BoundField>
+            <asp:BoundField DataField="HoraFin" HeaderText="Hora De Fin" SortExpression="CompanyName" ControlStyle-Width="100%" >
+            <ControlStyle Width="100%" />
+            </asp:BoundField>
+            <asp:BoundField DataField="Lugar" HeaderText="Lugar" SortExpression="Country" />
+
+        </Columns>
+    </asp:GridView>
+   
+    <p style="text-align:center;">
+        <asp:LinkButton ID="btnQuitarSeleccionados" runat="server" CssClass="btn btn-lg btn-danger disabled" OnClientClick="return confirm('¿Quitar cliente/s de la lista?');"><span class="glyphicon glyphicon-trash"></span>&nbsp; Quitar Clientes seleccionados</asp:LinkButton>
+    </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						
 					</div>
-					<div class="col col-lg-3">
+					<div class="col-md-4">
 						<div class="taskForms">
 							<asp:Label ID="lTarea" runat="server" Text="Tarea"></asp:Label>
 							<br />
@@ -197,7 +208,7 @@
 							<asp:ImageButton ID="ibAgregarTarea" runat="server" Height="61px" ImageUrl="~/Imagenes/AddTareaImg.png" OnClick="ibAgregarTarea_Click1" Width="59px" />
 						</div>
 					</div>
-				</div>
+		
 			</div>
 			<div class="divAllElements">
 			</div>

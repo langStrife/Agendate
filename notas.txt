@@ -1,0 +1,95 @@
+<asp:GridView 
+							class="tasks" ID="gvTareasPorDia" runat="server" 
+							CellPadding="4" ForeColor="#333333" GridLines="None"
+							Height="200px" Width="100%" AutoGenerateColumns="False" 
+							OnSelectedIndexChanged="gvTareasPorDia_SelectedIndexChanged" 
+							Style="margin-top: 2px;" 
+							CssClass="table table-bordered bs-table" 
+							OnRowEditing="gvTareasPorDia_RowEditing" 
+							OnDataBound="gvTareasPorDia_DataBound" 
+							OnRowDeleted="gvTareasPorDia_RowDeleted" 
+							OnRowUpdated="gvTareasPorDia_RowUpdated"
+							allowpaging="True" OnRowUpdating="gvTareasPorDia_RowUpdating">
+							<AlternatingRowStyle BackColor="White" />
+							<Columns>
+								<asp:BoundField DataField="Nombre" HeaderText="Tarea">
+									<ItemStyle HorizontalAlign="Center" />
+								</asp:BoundField>
+								<asp:BoundField DataField="Descripcion" HeaderText="Descripcion">
+									<ItemStyle HorizontalAlign="Center" />
+								</asp:BoundField>
+								<asp:BoundField DataField="HoraComienzo" HeaderText="Hora de Comienzo">
+									<ItemStyle HorizontalAlign="Center" />
+								</asp:BoundField>
+								<asp:BoundField DataField="HoraFin" HeaderText="Hora de Fin">
+									<ItemStyle HorizontalAlign="Center" />
+								</asp:BoundField>
+								<asp:BoundField DataField="Lugar" HeaderText="Lugar">
+									<ItemStyle HorizontalAlign="Center" />
+								</asp:BoundField>
+								<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="70px">
+									<EditItemTemplate>
+										<%--Botones de grabar y cancelar la edición de registro...--%>
+										<asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos del cliente?');" />
+										<asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default" CommandName="Cancel" />
+									</EditItemTemplate>
+									<ItemTemplate>
+										<%--Botones de eliminar y editar cliente...--%>
+										<asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar cliente?');" />
+										<asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Edit" />
+									</ItemTemplate>
+									<HeaderStyle Width="200px"></HeaderStyle>
+									<ItemStyle HorizontalAlign="Center"></ItemStyle>
+								</asp:TemplateField>
+							</Columns>
+							<FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+							<HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+							<PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+							<RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+							<SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
+							<SortedAscendingCellStyle BackColor="#FDF5AC" />
+							<SortedAscendingHeaderStyle BackColor="#4D0000" />
+							<SortedDescendingCellStyle BackColor="#FCF6C0" />
+							<SortedDescendingHeaderStyle BackColor="#820000" />
+						</asp:GridView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+nuevo
+ <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+        ConnectionString="<%$ ConnectionStrings:NorthwindConnectionString %>" 
+        DeleteCommand="DELETE FROM [Clientes] WHERE [ClienteID] = @ClienteID" 
+        SelectCommand="SELECT * FROM [Clientes]" 
+        UpdateCommand="UPDATE [Clientes] SET [ContactName] = @ContactName, [Phone] = @Phone WHERE [ClienteID] = @ClienteID">
+        <DeleteParameters>
+            <asp:Parameter Name="ClienteID" Type="Int32" />
+        </DeleteParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="ContactName" Type="String" />
+            <asp:Parameter Name="Phone" Type="String" />
+        </UpdateParameters>
+    </asp:SqlDataSource>

@@ -31,3 +31,10 @@ Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocia
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.csprojResolveAssemblyReference.cache
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.dll
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\bin\Debug\RedSocialEntity.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\bin\Debug\RedSocialEntity.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\bin\Debug\RedSocialComun.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\bin\Debug\RedSocialComun.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.csprojResolveAssemblyReference.cache
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialLib\RedSocialEntity\obj\Debug\RedSocialEntity.pdb

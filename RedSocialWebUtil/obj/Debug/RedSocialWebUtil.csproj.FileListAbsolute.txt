@@ -34,3 +34,12 @@ Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.csprojResolveAssemblyReference.cache
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.dll
 Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialWebUtil.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialWebUtil.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialComun.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialEntity.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialComun.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\bin\Debug\RedSocialEntity.pdb
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.csprojResolveAssemblyReference.cache
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.dll
+C:\Users\39457294\Desktop\Agendate\Agendate\RedSocialWebUtil\obj\Debug\RedSocialWebUtil.pdb

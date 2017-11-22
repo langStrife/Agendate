@@ -15,15 +15,22 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-       
+        if (!Page.IsPostBack)
+        {
+            Llenar_Grilla(DateTime.Today);
+        }
+    }
+
+    private void Llenar_Grilla(DateTime fechaHoraComienzo)
+    {
+        var listaTareas = boTarea.ListarTareas(SessionHelper.UsuarioAutenticado.Id, fechaHoraComienzo: fechaHoraComienzo);
+        this.gvTareasPorDia.DataSource = listaTareas;
+        this.gvTareasPorDia.DataBind();
     }
 
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
     {
-        DateTime fechaHoraComienzo = Calendar1.SelectedDate;
-        var listaTareas = boTarea.ListarTareas(SessionHelper.UsuarioAutenticado.Id, fechaHoraComienzo: fechaHoraComienzo);
-        this.gvTareasPorDia.DataSource = listaTareas;
-        this.gvTareasPorDia.DataBind();
+        Llenar_Grilla(Calendar1.SelectedDate);
 
         //Crear una clase de la cual hereden todas las paginas con una funcionalidad que consulte en el pageload
         //si SessionHelper tiene un usuario Loggeado, sinó redirigir al login
@@ -47,7 +54,6 @@ public partial class _Default : System.Web.UI.Page
             fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
             fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
             tarea.HoraComienzo = fechaHoraComienzo;
-
             diaFin = CalendarFin.SelectedDate.Date;
             tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
             tareaMinFin = ddlDesplegableMinFin.SelectedValue;
@@ -55,29 +61,112 @@ public partial class _Default : System.Web.UI.Page
             fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
             fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
             tarea.HoraFin = fechaHoraFin;
-            //usuario.FechaNacimiento = Util.ObtenerFecha(
-            //    int.Parse(ddlAnio.SelectedValue),
-            //    int.Parse(ddlMes.SelectedValue),
-            //    int.Parse(ddlDia.SelectedValue));
+            //if (validacion)
+            //{
             boTarea.AgendarTarea(tarea);
-            //SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
-            //System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
+            //}
+            //else 
+            //{
+            //    txtMensaje.Text = "Completar el formulario.";
+            //}
+
+        //SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
+        //System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
+    }
+        catch (ValidacionExcepcionAbstract ex)
+        {
+            WebHelper.MostrarMensaje(Page, ex.Message);
+        }
+    }
+
+    protected void gvTareasPorDia_RowEditing(object sender, GridViewEditEventArgs e)
+    {
+        try
+        {
+            gvTareasPorDia.EditIndex = e.NewEditIndex;
+            Llenar_Grilla(Calendar1.SelectedDate);
+        }
+        catch (Exception ex)
+        {
+            WebHelper.MostrarMensaje(Page, ex.Message);
+        }
+    }
+
+    protected void gvTareasPorDia_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+    {
+        try
+        {
+            gvTareasPorDia.EditIndex = -1;
+            Llenar_Grilla(Calendar1.SelectedDate);
+        }
+        catch (Exception ex)
+        {
+            WebHelper.MostrarMensaje(Page, ex.Message);
+        }
+    }
+
+    protected void gvTareasPorDia_RowUpdating(object sender, GridViewUpdateEventArgs e)
+    {
+        string tareaHoraCom, tareaMinCom, tareaTipoHoraCom, fechaHoraComienzoStr, tareaHoraFin, tareaMinFin, tareaTipoHoraFin, fechaHoraFinStr;
+        DateTime diaCom, fechaHoraComienzo, diaFin, fechaHoraFin;
+        try
+        {
+            TareaEntity tarea = new TareaEntity();
+            TextBox txt = new TextBox();
+            tarea.UsuarioId = SessionHelper.UsuarioAutenticado.Id;
+
+            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtDesc");
+            //tarea.Descripcion = txt.Text;
+            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtHoraDeCom");
+            //fechaHoraComienzo = DateTime.Parse(txt.Text);
+            //tarea.HoraComienzo = fechaHoraComienzo;
+            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtHoraDeFin");
+            //fechaHoraFin = DateTime.Parse(txt.Text);
+            //tarea.HoraFin = fechaHoraFin;
+            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtLugar");
+
+            //diaCom = CalendarCom.SelectedDate.Date;
+            //tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
+            //tareaMinCom = ddlDesplegableMinCom.SelectedValue;
+            //tareaTipoHoraCom = ddlDesplegableTipoHoraCom.SelectedValue;
+            //fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
+            //fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
+            //tarea.HoraComienzo = fechaHoraComienzo;
+            //diaFin = CalendarFin.SelectedDate.Date;
+            //tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
+            //tareaMinFin = ddlDesplegableMinFin.SelectedValue;
+            //tareaTipoHoraFin = ddlDesplegableTipoHoraFin.SelectedValue;
+            //fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
+            //fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
+            //tarea.HoraFin = fechaHoraFin;
+
+            boTarea.ActualizarTarea(tarea);
+            gvTareasPorDia.EditIndex = -1;
+            Llenar_Grilla(Calendar1.SelectedDate);
+
+            //txtMensaje.Text = "Tarea actualizada correctamente.";
         }
         catch (ValidacionExcepcionAbstract ex)
         {
             WebHelper.MostrarMensaje(Page, ex.Message);
         }
-
     }
 
-    protected void gvTareasPorDia_RowEditing(object sender, GridViewEditEventArgs e)
+    protected void gvTareasPorDia_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        gvTareasPorDia.EditIndex = e.NewEditIndex;
-    }
-
-    protected void gvTareasPorDia_RowUpdating(object sender, GridViewUpdateEventArgs e)
-    {
-        
+        try
+        {
+            // aca deberias hacer un metodo que con algun valor del
+            // gridview puedas hacer un delete en la base por ejemplo
+            // el ID de la tarea pero hay que ver si queda lindo ponerlo
+            // o no (en el gridview) y si no armarse una "clave primaria"
+            // con los otros datos o preguntarle al profe como hacer
+            //txtMensaje.Text = "Tarea eliminada correctamente".;
+        }
+        catch (Exception ex)
+        {
+            WebHelper.MostrarMensaje(Page, ex.Message);
+        }
     }
 
     protected void gvTareasPorDia_RowDeleted(object sender, GridViewDeletedEventArgs e)
@@ -145,12 +234,24 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void gvTareasPorDia_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+
+    protected void gvTareasPorDia_PageIndexChanging(object sender, GridViewPageEventArgs e)
     {
-        gvTareasPorDia.EditIndex = -1;
+
     }
 
-    protected void gvTareasPorDia_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    protected void gvTareasPorDia_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
+
+    }
+
+    protected void gvTareasPorDia_PageIndexChanged(object sender, EventArgs e)
+    {
+
+    }
+
+
+    protected void gvTareasPorDia_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
     {
 
     }
