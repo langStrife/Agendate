@@ -37,7 +37,10 @@ namespace RedSocialBusiness
         {
             try
             {
-                daTarea.Actualizar(tarea);
+                if (daTarea.HayDisponibilidad(tarea))
+                {
+                    daTarea.Actualizar(tarea);
+                }
             }
             catch (ExcepcionBO ex)
             {

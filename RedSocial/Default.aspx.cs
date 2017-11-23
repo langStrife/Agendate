@@ -17,6 +17,7 @@ public partial class _Default : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
+            gvTareasPorDia.EditIndex = -1;
             Llenar_Grilla(DateTime.Today);
         }
     }
@@ -38,8 +39,8 @@ public partial class _Default : System.Web.UI.Page
 
     protected void ibAgregarTarea_Click1(object sender, ImageClickEventArgs e)
     {
-        string tareaHoraCom, tareaMinCom, tareaTipoHoraCom, fechaHoraComienzoStr, tareaHoraFin, tareaMinFin, tareaTipoHoraFin, fechaHoraFinStr;
-        DateTime diaCom, fechaHoraComienzo, diaFin, fechaHoraFin;
+        string fechaHoraComienzoStr, fechaHoraFinStr;
+        DateTime fechaHoraComienzo, fechaHoraFin;
         try
         {
             TareaEntity tarea = new TareaEntity();
@@ -47,20 +48,21 @@ public partial class _Default : System.Web.UI.Page
             tarea.Nombre = txtTarea.Text;
             tarea.Descripcion = txtDesc.Text;
             tarea.Lugar = txtLugar.Text;
-            diaCom = CalendarCom.SelectedDate.Date;
-            tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
-            tareaMinCom = ddlDesplegableMinCom.SelectedValue;
-            tareaTipoHoraCom = ddlDesplegableTipoHoraCom.SelectedValue;
-            fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
-            fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
-            tarea.HoraComienzo = fechaHoraComienzo;
-            diaFin = CalendarFin.SelectedDate.Date;
-            tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
-            tareaMinFin = ddlDesplegableMinFin.SelectedValue;
-            tareaTipoHoraFin = ddlDesplegableTipoHoraFin.SelectedValue;
-            fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
-            fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
-            tarea.HoraFin = fechaHoraFin;
+            fechaHoraComienzo = 
+            //diaCom = CalendarCom.SelectedDate.Date;
+            //tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
+            //tareaMinCom = ddlDesplegableMinCom.SelectedValue;
+            //tareaTipoHoraCom = ddlDesplegableTipoHoraCom.SelectedValue;
+            //fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
+            //fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
+            //tarea.HoraComienzo = fechaHoraComienzo;
+            //diaFin = CalendarFin.SelectedDate.Date;
+            //tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
+            //tareaMinFin = ddlDesplegableMinFin.SelectedValue;
+            //tareaTipoHoraFin = ddlDesplegableTipoHoraFin.SelectedValue;
+            //fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
+            //fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
+            //tarea.HoraFin = fechaHoraFin;
             //if (validacion)
             //{
             boTarea.AgendarTarea(tarea);
@@ -69,10 +71,12 @@ public partial class _Default : System.Web.UI.Page
             //{
             //    txtMensaje.Text = "Completar el formulario.";
             //}
+            gvTareasPorDia.EditIndex = -1;
+            Llenar_Grilla(Calendar1.SelectedDate);
 
-        //SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
-        //System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
-    }
+            //SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
+            //System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
+        }
         catch (ValidacionExcepcionAbstract ex)
         {
             WebHelper.MostrarMensaje(Page, ex.Message);
@@ -107,44 +111,29 @@ public partial class _Default : System.Web.UI.Page
 
     protected void gvTareasPorDia_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        string tareaHoraCom, tareaMinCom, tareaTipoHoraCom, fechaHoraComienzoStr, tareaHoraFin, tareaMinFin, tareaTipoHoraFin, fechaHoraFinStr;
-        DateTime diaCom, fechaHoraComienzo, diaFin, fechaHoraFin;
+        DateTime fechaHoraComienzo, fechaHoraFin;
         try
         {
             TareaEntity tarea = new TareaEntity();
             TextBox txt = new TextBox();
-            tarea.UsuarioId = SessionHelper.UsuarioAutenticado.Id;
-
-            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtDesc");
-            //tarea.Descripcion = txt.Text;
-            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtHoraDeCom");
-            //fechaHoraComienzo = DateTime.Parse(txt.Text);
-            //tarea.HoraComienzo = fechaHoraComienzo;
-            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtHoraDeFin");
-            //fechaHoraFin = DateTime.Parse(txt.Text);
-            //tarea.HoraFin = fechaHoraFin;
-            //txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("txtLugar");
-
-            //diaCom = CalendarCom.SelectedDate.Date;
-            //tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
-            //tareaMinCom = ddlDesplegableMinCom.SelectedValue;
-            //tareaTipoHoraCom = ddlDesplegableTipoHoraCom.SelectedValue;
-            //fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
-            //fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
-            //tarea.HoraComienzo = fechaHoraComienzo;
-            //diaFin = CalendarFin.SelectedDate.Date;
-            //tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
-            //tareaMinFin = ddlDesplegableMinFin.SelectedValue;
-            //tareaTipoHoraFin = ddlDesplegableTipoHoraFin.SelectedValue;
-            //fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
-            //fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
-            //tarea.HoraFin = fechaHoraFin;
-
+            Label lbl = new Label();
+            lbl = (Label)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox6");
+            tarea.Id = Convert.ToInt32(lbl.Text);
+            txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox1");
+            tarea.Nombre = txt.Text;
+            txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox2");
+            tarea.Descripcion = txt.Text;
+            txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox3");
+            fechaHoraComienzo = DateTime.Parse(txt.Text);
+            tarea.HoraComienzo = fechaHoraComienzo;
+            txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox4");
+            fechaHoraFin = DateTime.Parse(txt.Text);
+            tarea.HoraFin = fechaHoraFin;
+            txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox5");
+            tarea.Lugar = txt.Text;
             boTarea.ActualizarTarea(tarea);
             gvTareasPorDia.EditIndex = -1;
             Llenar_Grilla(Calendar1.SelectedDate);
-
-            //txtMensaje.Text = "Tarea actualizada correctamente.";
         }
         catch (ValidacionExcepcionAbstract ex)
         {
@@ -156,12 +145,13 @@ public partial class _Default : System.Web.UI.Page
     {
         try
         {
-            // aca deberias hacer un metodo que con algun valor del
-            // gridview puedas hacer un delete en la base por ejemplo
-            // el ID de la tarea pero hay que ver si queda lindo ponerlo
-            // o no (en el gridview) y si no armarse una "clave primaria"
-            // con los otros datos o preguntarle al profe como hacer
-            //txtMensaje.Text = "Tarea eliminada correctamente".;
+            TareaEntity tarea = new TareaEntity();
+            Label lbl = new Label();
+            lbl = (Label)gvTareasPorDia.Rows[e.RowIndex].FindControl("Label6");
+            tarea.Id = Convert.ToInt32(lbl.Text);
+            boTarea.BorrarTarea(tarea);
+            gvTareasPorDia.EditIndex = -1;
+            Llenar_Grilla(Calendar1.SelectedDate);
         }
         catch (Exception ex)
         {
@@ -252,6 +242,11 @@ public partial class _Default : System.Web.UI.Page
 
 
     protected void gvTareasPorDia_SelectedIndexChanging(object sender, GridViewSelectEventArgs e)
+    {
+
+    }
+
+    protected void btnQuitarSeleccionados_Click(object sender, EventArgs e)
     {
 
     }

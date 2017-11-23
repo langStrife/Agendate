@@ -98,6 +98,7 @@ namespace RedSocialDataSQLServer
                         comando.Parameters["@HoraComienzo"].Value = tarea.HoraComienzo;
                         comando.Parameters["@HoraFin"].Value = tarea.HoraFin;
                         comando.Parameters["@Lugar"].Value = tarea.Lugar;
+                        comando.ExecuteNonQuery();
                     }
 
                     conexion.Close();
@@ -121,6 +122,7 @@ namespace RedSocialDataSQLServer
                         SqlCommandBuilder.DeriveParameters(comando);
 
                         comando.Parameters["@ID"].Value = tarea.Id;
+                        comando.ExecuteNonQuery();
                     }
 
                     conexion.Close();
