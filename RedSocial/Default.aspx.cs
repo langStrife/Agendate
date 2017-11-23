@@ -48,7 +48,7 @@ public partial class _Default : System.Web.UI.Page
             tarea.Nombre = txtTarea.Text;
             tarea.Descripcion = txtDesc.Text;
             tarea.Lugar = txtLugar.Text;
-            fechaHoraComienzo = 
+            fechaHoraComienzoStr = this.txtFechaHoraComienzo.Value;
             //diaCom = CalendarCom.SelectedDate.Date;
             //tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
             //tareaMinCom = ddlDesplegableMinCom.SelectedValue;

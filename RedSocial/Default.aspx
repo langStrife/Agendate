@@ -141,7 +141,7 @@
 								<asp:Label ID="lFechaCom" runat="server" Text="Fecha de Comienzo" BorderColor="White" Font-Bold="True" ForeColor="White"></asp:Label>
 								<div class="form-group">
 									<div class='input-group date' id='datetimepicker1'>
-										<input type='text' class="form-control" id="dp1" />
+										<input type='text' class="form-control" id ="txtFechaHoraComienzo" runat="server" />
 										<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 										</span>
@@ -164,7 +164,7 @@
 								<asp:Label ID="lFechaFin" runat="server" Text="Fecha de Fin" BorderColor="White" Font-Bold="True" ForeColor="White"></asp:Label>
 								<div class="form-group">
 									<div class='input-group date' id='datetimepicker2'>
-										<input type='text' class="form-control" id="dp2" />
+										<input type='text' class="form-control" id ="txtFechaHoraFin" runat="server" />
 										<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
 										</span>
