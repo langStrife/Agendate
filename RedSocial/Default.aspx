@@ -20,6 +20,13 @@
 	<body>
 		<form id="form1" runat="server">
 			<div class="container">
+                <a href="Registracion.aspx" class="btn btn-info btn-lg" id="logoutButton" 
+					style="text-align: center; 
+					margin: 5px 0px 5px 0px; 
+					width: 20%; max-width: 300px; 
+					min-width: 110px;" title="Log Out">
+				<span class="glyphicon glyphicon-log-out"></span> Log out
+				</a>
 				<div class="row">
 					<div class="col-md-8">
 						<asp:Calendar class="calendar" ID="Calendar1" runat="server" 
@@ -65,15 +72,17 @@
 									<HeaderStyle Width="100%"></HeaderStyle>
 									<ItemStyle HorizontalAlign="Center"></ItemStyle>
 								</asp:TemplateField>
-								<%--campos editables...--%>
-								<asp:TemplateField HeaderText="IDTarea" InsertVisible="False" ShowHeader="False" SortExpression="IDTarea" Visible="False">
-									<EditItemTemplate>
-										<asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
-									</EditItemTemplate>
-									<ItemTemplate>
-										<asp:Label ID="Label6" runat="server"></asp:Label>
-									</ItemTemplate>
-								</asp:TemplateField>
+
+								<%--campos...--%>
+								<asp:TemplateField HeaderText="Id" Visible="False">
+                                    <EditItemTemplate>
+                                        <asp:Label ID="Label1" runat="server" Text='<%# Eval("Id") %>'></asp:Label>
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:Label ID="Label6" runat="server" Text='<%# Bind("Id") %>'></asp:Label>
+                                    </ItemTemplate>
+                                    <ControlStyle BorderStyle="None" />
+                                </asp:TemplateField>
 								<asp:TemplateField HeaderText="Tarea" SortExpression="Tarea">
 									<EditItemTemplate>
 										<asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Nombre") %>'></asp:TextBox>
@@ -149,7 +158,9 @@
 								</div>
 								<script type="text/javascript">
 									$(function () {
-									    $('#datetimepicker1').datetimepicker();
+									    $('#datetimepicker1').datetimepicker({
+									        format: 'DD/MM/YYYY HH:mm'
+									    });
 									});
 								</script>
 								<!--
@@ -163,7 +174,7 @@
 							<div class="col-md-6">
 								<asp:Label ID="lFechaFin" runat="server" Text="Fecha de Fin" BorderColor="White" Font-Bold="True" ForeColor="White"></asp:Label>
 								<div class="form-group">
-									<div class='input-group date' id='datetimepicker2'>
+									<div class='input-group date' id='datetimepicker2' dir="auto">
 										<input type='text' class="form-control" id ="txtFechaHoraFin" runat="server" />
 										<span class="input-group-addon">
 										<span class="glyphicon glyphicon-calendar"></span>
@@ -172,7 +183,9 @@
 								</div>
 								<script type="text/javascript">
 									$(function () {
-									    $('#datetimepicker2').datetimepicker();
+									    $('#datetimepicker2').datetimepicker({
+									        format: 'DD/MM/YYYY HH:mm'
+									    });
 									});
 								</script>
 								<!--<asp:Calendar ID="CalendarFin" runat="server" OnSelectionChanged="CalendarFin_SelectionChanged">

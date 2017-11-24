@@ -8,6 +8,7 @@ using RedSocialBusiness;
 using RedSocialEntity;
 using RedSocialComun;
 using RedSocialWebUtil;
+using System.Globalization;
 
 public partial class _Default : System.Web.UI.Page
 {
@@ -15,6 +16,13 @@ public partial class _Default : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        //Si se termina la sesion el usuario será redirigido a la pagina de login
+        if (!Response.IsClientConnected)
+        {
+            Response.Redirect("Registracion.aspx");
+            WebHelper.MostrarMensaje(Page, "Su Sesión Ha Caducado");
+        }
+
         if (!Page.IsPostBack)
         {
             gvTareasPorDia.EditIndex = -1;
@@ -49,20 +57,11 @@ public partial class _Default : System.Web.UI.Page
             tarea.Descripcion = txtDesc.Text;
             tarea.Lugar = txtLugar.Text;
             fechaHoraComienzoStr = this.txtFechaHoraComienzo.Value;
-            //diaCom = CalendarCom.SelectedDate.Date;
-            //tareaHoraCom = ddlDesplegableHoraCom.SelectedValue;
-            //tareaMinCom = ddlDesplegableMinCom.SelectedValue;
-            //tareaTipoHoraCom = ddlDesplegableTipoHoraCom.SelectedValue;
-            //fechaHoraComienzoStr = (diaCom.ToString("dd/MM/yyy") + " " + tareaHoraCom + ":" + tareaMinCom + " " + tareaTipoHoraCom);
-            //fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
-            //tarea.HoraComienzo = fechaHoraComienzo;
-            //diaFin = CalendarFin.SelectedDate.Date;
-            //tareaHoraFin = ddlDesplegableHoraFin.SelectedValue;
-            //tareaMinFin = ddlDesplegableMinFin.SelectedValue;
-            //tareaTipoHoraFin = ddlDesplegableTipoHoraFin.SelectedValue;
-            //fechaHoraFinStr = (diaFin.ToString("dd/MM/yyy") + " " + tareaHoraFin + ":" + tareaMinFin + " " + tareaTipoHoraFin);
-            //fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
-            //tarea.HoraFin = fechaHoraFin;
+            fechaHoraComienzo = DateTime.Parse(fechaHoraComienzoStr);
+            tarea.HoraComienzo = fechaHoraComienzo;
+            fechaHoraFinStr = this.txtFechaHoraFin.Value;
+            fechaHoraFin = DateTime.Parse(fechaHoraFinStr);
+            tarea.HoraFin = fechaHoraFin;
             //if (validacion)
             //{
             boTarea.AgendarTarea(tarea);
@@ -117,7 +116,7 @@ public partial class _Default : System.Web.UI.Page
             TareaEntity tarea = new TareaEntity();
             TextBox txt = new TextBox();
             Label lbl = new Label();
-            lbl = (Label)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox6");
+            lbl = (Label)gvTareasPorDia.Rows[e.RowIndex].FindControl("Label1");
             tarea.Id = Convert.ToInt32(lbl.Text);
             txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox1");
             tarea.Nombre = txt.Text;

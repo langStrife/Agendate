@@ -23,6 +23,7 @@ public partial class SinAutenticar : System.Web.UI.MasterPage
         {
             SessionHelper.AlmacenarUsuarioAutenticado(boUsuario.Autenticar(txtEmail.Text, txtPassword.Text));
             System.Web.Security.FormsAuthentication.RedirectFromLoginPage(SessionHelper.UsuarioAutenticado.Email, false);
+            Response.Redirect("Default.aspx");
         }
         catch (AutenticacionExcepcionBO ex)
         {
