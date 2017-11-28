@@ -20,13 +20,13 @@
 	<body>
 		<form id="form1" runat="server">
 			<div class="container">
-                <a href="Registracion.aspx" class="btn btn-info btn-lg" id="logoutButton" 
-					style="text-align: center; 
-					margin: 5px 0px 5px 0px; 
+
+
+                <asp:Button class="btn btn-info btn-lg" ID="logoutButton" runat="server" Text="Log Out"
+                    style="text-align: center; 
 					width: 20%; max-width: 300px; 
-					min-width: 110px;" title="Log Out">
-				<span class="glyphicon glyphicon-log-out"></span> Log out
-				</a>
+					min-width: 110px; margin-left: 0px; margin-top: 5px; margin-bottom: 5px;" title="Log Out" OnClick="logoutButton_Click"/>
+
 				<div class="row">
 					<div class="col-md-8">
 						<asp:Calendar class="calendar" ID="Calendar1" runat="server" 
@@ -61,12 +61,12 @@
 								<asp:TemplateField ItemStyle-HorizontalAlign="Center" HeaderStyle-Width="100%">
 									<ItemTemplate>
 										<%--Botones de eliminar y editar cliente...--%>
-										<asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar cliente?');" />
+										<asp:Button ID="btnDelete" runat="server" Text="Quitar" CssClass="btn btn-danger" CommandName="Delete" OnClientClick="return confirm('¿Eliminar tarea?');" />
 										<asp:Button ID="btnEdit" runat="server" Text="Editar" CssClass="btn btn-info" CommandName="Edit" />
 									</ItemTemplate>
 									<edititemtemplate>
 										<%--Botones de grabar y cancelar la edición de registro...--%>
-										<asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos del cliente?');" />
+										<asp:Button ID="btnUpdate" runat="server" Text="Grabar" CssClass="btn btn-success" CommandName="Update" OnClientClick="return confirm('¿Seguro que quiere modificar los datos de la tarea?');" />
 										<asp:Button ID="btnCancel" runat="server" Text="Cancelar" CssClass="btn btn-default" CommandName="Cancel" />
 									</edititemtemplate>
 									<HeaderStyle Width="100%"></HeaderStyle>

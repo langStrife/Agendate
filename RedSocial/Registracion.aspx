@@ -83,6 +83,7 @@
                         </asp:DropDownList>
                     </asp:TableCell>
                 </asp:TableRow>
+                
                 <asp:TableRow>
                     <asp:TableCell ColumnSpan="2">
                         <asp:RadioButton ID="radMujer" runat="server" Text="Mujer" CssClass="SexoFemenino" />
@@ -97,5 +98,16 @@
             </asp:Table>
         </asp:Panel>
     </asp:Panel>
+    <script type="text/javascript">
+        var inputElements = document.getElementsByTagName("input");
+        for (var inputName in inputElements) {
+            input = inputElements[inputName];
+            if (input.type === "radio") {
+                input.name = "Group1";
+            }
+        }
+    </script>
 </asp:Content>
+
+
 

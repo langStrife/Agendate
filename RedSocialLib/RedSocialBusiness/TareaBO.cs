@@ -27,7 +27,7 @@ namespace RedSocialBusiness
                     daTarea.Insertar(tarea);
                 }
             }
-            catch (ExcepcionDA ex)
+            catch (ExcepcionBO ex)
             {
                 throw new ExcepcionBO("No se pudo realizar la registración de la tarea.", ex);
             }

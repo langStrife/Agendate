@@ -1,0 +1,4 @@
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\bin\Release\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\bin\Release\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\obj\Release\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialComun\obj\Release\RedSocialComun.pdb

@@ -19,8 +19,8 @@ public partial class _Default : System.Web.UI.Page
         //Si se termina la sesion el usuario será redirigido a la pagina de login
         if (!Response.IsClientConnected)
         {
-            Response.Redirect("Registracion.aspx");
             WebHelper.MostrarMensaje(Page, "Su Sesión Ha Caducado");
+            Response.Redirect("Registracion.aspx");
         }
 
         if (!Page.IsPostBack)
@@ -32,9 +32,17 @@ public partial class _Default : System.Web.UI.Page
 
     private void Llenar_Grilla(DateTime fechaHoraComienzo)
     {
-        var listaTareas = boTarea.ListarTareas(SessionHelper.UsuarioAutenticado.Id, fechaHoraComienzo: fechaHoraComienzo);
-        this.gvTareasPorDia.DataSource = listaTareas;
-        this.gvTareasPorDia.DataBind();
+        if (!Response.IsClientConnected)
+        {
+            WebHelper.MostrarMensaje(Page, "Su Sesión Ha Caducado");
+            Response.Redirect("Registracion.aspx");
+        }
+        else
+        {
+            var listaTareas = boTarea.ListarTareas(SessionHelper.UsuarioAutenticado.Id, fechaHoraComienzo: fechaHoraComienzo);
+            this.gvTareasPorDia.DataSource = listaTareas;
+            this.gvTareasPorDia.DataBind();
+        }
     }
 
     protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -118,6 +126,7 @@ public partial class _Default : System.Web.UI.Page
             Label lbl = new Label();
             lbl = (Label)gvTareasPorDia.Rows[e.RowIndex].FindControl("Label1");
             tarea.Id = Convert.ToInt32(lbl.Text);
+            tarea.UsuarioId = SessionHelper.UsuarioAutenticado.Id;
             txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox1");
             tarea.Nombre = txt.Text;
             txt = (TextBox)gvTareasPorDia.Rows[e.RowIndex].FindControl("TextBox2");
@@ -248,5 +257,11 @@ public partial class _Default : System.Web.UI.Page
     protected void btnQuitarSeleccionados_Click(object sender, EventArgs e)
     {
 
+    }
+
+    protected void logoutButton_Click(object sender, EventArgs e)
+    {
+        Session.Abandon();
+        Response.Redirect("Registracion.aspx");
     }
 }

@@ -1,0 +1,9 @@
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialWebUtil.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialWebUtil.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialComun.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialEntity.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialComun.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\bin\Release\RedSocialEntity.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Release\RedSocialWebUtil.csprojResolveAssemblyReference.cache
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Release\RedSocialWebUtil.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialWebUtil\obj\Release\RedSocialWebUtil.pdb
