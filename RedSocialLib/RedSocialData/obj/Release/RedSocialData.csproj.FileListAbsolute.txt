@@ -1,0 +1,5 @@
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialData\bin\Release\RedSocialData.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialData\bin\Release\RedSocialData.pdb
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialData\obj\Release\RedSocialData.csprojResolveAssemblyReference.cache
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialData\obj\Release\RedSocialData.dll
+Z:\Taller de Computacion\Taller de Computacion IV\Agendate\RedSocialLib\RedSocialData\obj\Release\RedSocialData.pdb
